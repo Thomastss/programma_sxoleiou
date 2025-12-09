@@ -1,58 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; /* απαλή μπλε-γκρι απόχρωση για όλο το background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a1a1a;
+}
+
 .programmata {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 60px;
-    padding: 40px 0;
-    background-color: #f0f0f5; /* απαλή γκρι απόχρωση για όλο το body */
+    gap: 80px; /* λίγο μεγαλύτερο gap ανάμεσα στα tables */
+    padding: 40px 20px;
 }
 
 .bp, .bm2 {
     text-align: center;
-    color: #333; /* σκούρο γκρι για ευανάγνωστο text */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Βασικό styling για table */
 table {
-    width: 90%;
-    max-width: 1000px;
+    width: 95%;
+    max-width: 1200px; /* λίγο μεγαλύτερο για περισσότερο χώρο */
     border-collapse: collapse;
     margin-top: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e6e6e6; /* απαλό γκρι για table background */
-    border-radius: 12px;
+    background-color: #e6f0fa; /* πολύ απαλή μπλε απόχρωση */
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+table:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.15);
 }
 
 /* Κεφαλίδες */
 th {
-    background: linear-gradient(90deg, #89f7fe, #66a6ff); /* φουτουριστικό gradient */
-    color: #1a1a1a;
-    font-weight: bold;
-    padding: 14px;
+    background: linear-gradient(90deg, #a1c4fd, #c2e9fb); /* light blue gradient */
+    color: #0a0a0a;
+    font-weight: 600;
+    padding: 18px; /* μεγαλύτερο padding για πιο μεγάλο κελί */
     text-align: center;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 16px;
 }
 
 /* Κελιά */
 td {
-    padding: 12px;
+    padding: 16px; /* μεγαλύτερο για να χωράει το content */
     text-align: center;
     border-bottom: 1px solid #d0d0d0;
-    color: #222;
+    color: #1a1a1a;
+    font-size: 15px;
 }
 
 /* Zebra rows */
-tr:nth-child(even) {
-    background-color: #f5f5f5;
+tr:nth-child(even) td {
+    background-color: #f5f9ff; /* πολύ απαλή μπλε-λευκή απόχρωση */
 }
 
-/* Hover effect */
-tr:hover {
-    background-color: #cceeff; /* απαλή μπλε/γαλάζια απόχρωση */
+tr:nth-child(odd) td {
+    background-color: #ffffff;
+}
+
+/* Hover effect για γραμμές */
+tr:hover td {
+    background-color: #cde8ff;
     transition: background 0.3s;
 }
 
@@ -64,15 +81,17 @@ tr:hover {
         white-space: nowrap;
     }
 }
+
+/* Footer */
 footer {
     width: 100%;
     text-align: center;
-    padding: 20px 0;
-    background-color: #e6e6e6; /* ίδιο γκρι με τα tables */
-    color: #333;
+    padding: 25px 0;
+    background-color: #e6f0fa;
+    color: #1a1a1a;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 -3px 8px rgba(0,0,0,0.05);
-    position: relative;
+    font-weight: 500;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.05);
     margin-top: 40px;
 }
 
@@ -80,4 +99,26 @@ footer p {
     margin: 0;
     font-size: 14px;
     letter-spacing: 0.5px;
+}
+.search-container {
+    width: 95%;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+}
+
+#tableSearch {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    outline: none;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+#tableSearch:focus {
+    border-color: #66a6ff;
+    box-shadow: 0 0 5px rgba(102,166,255,0.5);
 }
